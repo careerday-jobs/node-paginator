@@ -1,0 +1,54 @@
+{
+  "name": "@careerday/node-paginator",
+  "version": "0.0.1",
+  "description": "Node.js-based custom pagination library",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js",
+    "publish": "npm run build && npm publish",
+    "lint": "eslint --ext .js,.ts ./src",
+    "lint:fix": "eslint --fix --ext .js,.ts ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/careerday-jobs/node-paginator.git"
+  },
+  "keywords": [
+    "node.js",
+    "pagination",
+    "paginator"
+  ],
+  "author": {
+    "name": "careerday-jobs",
+    "email": "dev@careerday.jobs",
+    "url": "https://github.com/careerday-jobs"
+  },
+  "contributors": [
+    {
+      "name": "Hyeonu Kim",
+      "email": "hw.kim@careerday.jobs",
+      "url": "https://github.com/starseeder0309"
+    },
+    {
+      "name": "Kunho Kim",
+      "email": "kh.kim@careerday.jobs",
+      "url": "https://github.com/kunhokimcareerday"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/careerday-jobs/node-paginator/issues"
+  },
+  "homepage": "https://github.com/careerday-jobs/node-paginator#readme",
+  "devDependencies": {
+    "typescript": "^4.8.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "mongoose": "^6.6.1"
+  }
+}
