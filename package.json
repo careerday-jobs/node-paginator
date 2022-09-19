@@ -1,6 +1,6 @@
 {
-  "name": "@careerday-jobs/node-paginator",
-  "version": "0.0.4",
+  "name": "careerday-paginator",
+  "version": "0.0.1",
   "description": "Node.js-based custom pagination library",
   "private": false,
   "main": "dist/index.js",
