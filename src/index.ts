@@ -11,10 +11,6 @@ import {
 import { validatePageValue } from './helpers/validatePageValue';
 import { PaginatedResult } from './types/paginatedResult';
 
-export type QueryResult<T> = T extends Document<any, any, any>
-  ? LeanDocument<T>[]
-  : LeanDocument<Require_id<T>>[];
-
 export interface OrQuery {
   [query: string]: {
     $regex: string;
@@ -26,14 +22,14 @@ export interface SortingOption {
   [key: string]: SortOrder | { $meta: 'textScore' };
 }
 
-export interface MongoosePaginationParam<T> {
+export interface MongoosePaginationParam {
   pageNoParam: number;
   pageSizeParam: number;
-  model: Model<T>;
+  model: Model<any>;
   filteredFields: string[];
   filter: string | null;
   orQuery: OrQuery | null;
-  andQuery: FilterQuery<T> | null;
+  andQuery: FilterQuery<any> | null;
   sortingOption: SortingOption | null;
   isNoMinResultLimit: boolean;
 }
@@ -49,7 +45,7 @@ export class NodePaginator {
     andQuery = null,
     sortingOption = { _id: -1 },
     isNoMinResultLimit = false,
-  }: MongoosePaginationParam<T>) {
+  }: MongoosePaginationParam) {
     const { pageNo, pageSize } = validatePageValue(
       pageNoParam,
       pageSizeParam,
@@ -86,9 +82,9 @@ export class NodePaginator {
       };
     }
 
-    const totalQuery = model.find<T>(query);
+    const totalQuery = model.find(query);
 
-    const queryResult: QueryResult<T> = await totalQuery
+    const queryResult = await totalQuery
       .sort(sortingOption)
       .skip((pageNo - 1) * pageSize)
       .limit(pageSize)
@@ -98,7 +94,7 @@ export class NodePaginator {
     const totalItemNo: number = await model.countDocuments(query);
     const totalPageNo: number = Math.ceil(totalItemNo / pageSize);
 
-    const result = new PaginatedResult<QueryResult<T>>(
+    const result = new PaginatedResult(
       Number(pageNo),
       Number(pageSize),
       Number(totalItemNo),
