@@ -1,0 +1,20 @@
+name: Bump Version
+
+on: workflow_dispatch
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: git config --global user.email "github-actions@example.com"
+      - run: git config --global user.name "GitHub Actions"
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - run: npm version patch
+      - run: git push origin main --tags
+      - uses: actions/upload-artifact@v2
+        with:
+          name: src
+          path: ./
