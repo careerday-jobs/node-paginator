@@ -1,12 +1,4 @@
-import {
-  Document,
-  FilterQuery,
-  LeanDocument,
-  Model,
-  Query,
-  Require_id,
-  SortOrder,
-} from 'mongoose';
+import { FilterQuery, Model, SortOrder } from 'mongoose';
 
 import { validatePageValue } from './helpers/validatePageValue';
 import { PaginatedResult } from './types/paginatedResult';
@@ -82,9 +74,8 @@ export class NodePaginator {
       };
     }
 
-    const totalQuery = model.find(query);
-
-    const queryResult = await totalQuery
+    const queryResult = await model
+      .find(query)
       .sort(sortingOption)
       .skip((pageNo - 1) * pageSize)
       .limit(pageSize)

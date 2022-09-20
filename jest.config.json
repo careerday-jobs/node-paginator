@@ -1,0 +1,6 @@
+{
+  "verbose": true,
+  "collectCoverage": true,
+  "testMatch": ["<rootDir>/src/**/*.test.(ts)"],
+  "preset": "@shelf/jest-mongodb"
+}
