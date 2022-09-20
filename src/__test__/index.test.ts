@@ -2,8 +2,8 @@ import mongoose from 'mongoose';
 
 import { mongoDBConfig } from './config';
 import { UserModel } from './user.model';
-import { NodePaginator } from '..';
 import { generateMockUsers, IUsers } from './user.mock';
+import { NodePaginator } from '..';
 
 let mongooseInstance: typeof mongoose;
 let db: any;
