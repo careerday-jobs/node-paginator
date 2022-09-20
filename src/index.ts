@@ -27,11 +27,11 @@ export interface MongoosePaginationParam {
   pageSizeParam: number;
   model: Model<any>;
   filteredFields: string[];
-  filter: string | null;
-  orQuery: OrQuery | null;
-  andQuery: FilterQuery<any> | null;
-  sortingOption: SortingOption | null;
-  isNoMinResultLimit: boolean;
+  filter?: string | null;
+  orQuery?: OrQuery | null;
+  andQuery?: FilterQuery<any> | null;
+  sortingOption?: SortingOption | null;
+  isNoMinResultLimit?: boolean;
 }
 
 export class NodePaginator {
