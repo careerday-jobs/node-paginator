@@ -174,6 +174,12 @@ PaginatedResult {
     }
 ```
 
+## ⏳ Pagination Library On Frontend
+
+Looking for a library which supports pagination on frontend? Why don't you check out [react-paginator](https://www.npmjs.com/package/@careerday-jobs/react-paginator)? 
+It's way more efficient when you try both packages!
+
+
 ## Contributors
 
 [//]: contributor-faces
