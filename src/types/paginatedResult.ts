@@ -1,9 +1,9 @@
 export class PaginatedResult<T> {
   constructor(
-    public readonly pageNo: number,
-    public readonly pageSize: number,
-    public readonly totalItemNo: number,
-    public readonly totalPageNo: number,
-    public readonly items: T
+    public pageNo: number,
+    public pageSize: number,
+    public totalItemNo: number,
+    public totalPageNo: number,
+    public items: T
   ) {}
 }

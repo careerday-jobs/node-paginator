@@ -1,6 +1,6 @@
 {
   "name": "@careerday-jobs/node-paginator",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Node.js-based custom pagination library",
   "private": false,
   "main": "dist/index.js",
@@ -60,7 +60,6 @@
     "node": ">=16.0.0"
   },
   "dependencies": {
-    "@careerday-jobs/react-paginator": "^0.1.2",
     "mongoose": "^6.6.1"
   }
 }
