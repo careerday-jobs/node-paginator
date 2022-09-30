@@ -60,6 +60,7 @@
     "node": ">=16.0.0"
   },
   "dependencies": {
+    "@careerday-jobs/react-paginator": "^0.1.2",
     "mongoose": "^6.6.1"
   }
 }

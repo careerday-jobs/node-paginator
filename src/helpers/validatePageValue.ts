@@ -3,7 +3,7 @@ export interface PageValue {
   pageSize: number;
 }
 
-const MAX_PAGE_SIZE = 100;
+export const _MAX_PAGE_SIZE = 100;
 
 export function validatePageValue(
   pageNoParam: number,
@@ -23,7 +23,7 @@ export function validatePageValue(
     throw new Error('pageSize or pageNo must be positive numbers.');
   }
 
-  pageSize = isNoMinResultLimit ? Math.min(pageSize, MAX_PAGE_SIZE) : pageSize;
+  pageSize = isNoMinResultLimit ? Math.min(pageSize, _MAX_PAGE_SIZE) : pageSize;
 
   const pageValue: PageValue = {
     pageNo,

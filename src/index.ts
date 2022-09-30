@@ -1,6 +1,6 @@
 import { FilterQuery, Model, SortOrder } from 'mongoose';
 
-import { validatePageValue } from './helpers/validatePageValue';
+import {_MAX_PAGE_SIZE, validatePageValue} from './helpers/validatePageValue';
 import { PaginatedResult } from './types/paginatedResult';
 
 export interface OrQuery {
@@ -95,4 +95,6 @@ export class NodePaginator {
 
     return result;
   }
+
+  public static PAGE_MAX_SIZE = _MAX_PAGE_SIZE;
 }
