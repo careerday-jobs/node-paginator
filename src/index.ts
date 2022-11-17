@@ -79,7 +79,6 @@ export class NodePaginator {
       .sort(sortingOption)
       .skip((pageNo - 1) * pageSize)
       .limit(pageSize)
-      .lean()
       .exec();
 
     const totalItemNo: number = await model.countDocuments(query);
