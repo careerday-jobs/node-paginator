@@ -47,10 +47,12 @@ export class NodePaginator {
     let query: FilterQuery<T> = {};
     let orFilters: OrQuery[] = [];
 
-    if (!!filter) {
+    const trimmedFilter = filter?.trim();
+
+    if (!!trimmedFilter) {
       orFilters = filteredFields.map((filteredField) => ({
         [filteredField]: {
-          $regex: `${filter}`,
+          $regex: `${trimmedFilter}`,
           $options: 'i',
         },
       }));
